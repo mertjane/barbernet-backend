@@ -22,12 +22,18 @@ app.get("/", (req, res) => {
   res.send("BarberNet backend is running 🚀");
 });
 
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+});
+
 // Use the auth routes
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/jobs", jobsRoutes);
 app.use("/api/barbers", barbersRoutes);
 app.use("/api/shops", shopsRoutes);
+
+
 
 app.listen(port, () =>
   console.log(`✅ Server running on http://localhost:${port}`)
