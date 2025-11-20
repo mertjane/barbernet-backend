@@ -33,6 +33,11 @@ app.use("/api/jobs", jobsRoutes);
 app.use("/api/barbers", barbersRoutes);
 app.use("/api/shops", shopsRoutes);
 
+app.get('/api/test', (req, res) => {
+  console.log('✅ Test endpoint hit!');
+  res.json({ message: 'Backend is reachable' });
+});
+
 
 
 app.listen(port, () =>
