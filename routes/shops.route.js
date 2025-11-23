@@ -117,7 +117,7 @@ router.put("/update/:id", async (req, res) => {
       return res.status(400).json({ error: "owner_id is required" });
     }
 
-    const updatedShop = await updateBarber(req.params.id, owner_id, req.body);
+    const updatedShop = await updateShop(req.params.id, owner_id, req.body);
 
     if (!updatedShop) {
       return res.status(403).json({
