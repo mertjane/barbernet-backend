@@ -125,7 +125,7 @@ router.put("/update/:id", async (req, res) => {
   try {
     const { owner_id } = req.body;
 
-    if (!owner_id) {
+    if (!owner_id) { 
       return res.status(400).json({ error: "owner_id is required" });
     }
 
